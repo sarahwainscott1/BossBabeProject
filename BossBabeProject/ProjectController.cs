@@ -8,26 +8,21 @@ using Microsoft.EntityFrameworkCore;
 namespace BossBabeProjectLibrary {
     public class  ProjectController {
 
-        
-        public string ConnectionString { get; set; } = null!;
-        public SqlConnection SqlConnection { get; set; } = null!;
 
-        public ProjectController (string ServerInstance, string Database) {
-            ConnectionString = $"server ={ServerInstance};" + $"database ={Database};" + "trustservercertificate=true;" + "trusted_connection = true;";
-        }
-        public void OpenConnection() {
-            SqlConnection = new SqlConnection(ConnectionString);
-            SqlConnection.Open();
-            if (SqlConnection.State != System.Data.ConnectionState.Open) {
-                throw new Exception("Connection did not open :(");
+   
+        public static void  GetAllProjects() {
+            var _context = new AppDbContext();
+            var projects = _context.Projects.ToList();
+            foreach( var p in projects) {
+                Console.WriteLine(p);
+                }
+            
             }
-        }
-        public void CloseConnection() {
-            SqlConnection.Close();
-        }
 
 
-        public static Project UpdateHoursWorked(int workId) {
+
+
+            public static Project UpdateHoursWorked(int workId) {
             var _context = new AppDbContext();
             var work = _context.Works.SingleOrDefault(x => x.Id == workId);
             var project = _context.Projects.SingleOrDefault(x => x.Id == work.ProjectId);
