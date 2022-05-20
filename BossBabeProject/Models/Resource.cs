@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Models {
+namespace BossBabeProjectLibrary.Models {
     public  class Resource {
 
         public int Id { get; set; }
@@ -14,6 +14,7 @@ namespace Project.Models {
         [StringLength(30)]
         public string Name { get; set; } = null!;
         public int HoursPerDay { get; set; }
+        public virtual List<Work>? Works { get; set; }
 
 
     }
