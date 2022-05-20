@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BossBabeProjectLibrary.Models {
-    public  class Resource {
+    public class Resource {
 
         public int Id { get; set; }
         public int ProjectId { get; set; }
@@ -17,5 +17,10 @@ namespace BossBabeProjectLibrary.Models {
         public virtual List<Work>? Works { get; set; }
 
 
+        public override string ToString() {
+            return $"ID[{Id} | ProjectId {ProjectId} | Name {Name} |  Hours per Day {HoursPerDay}]";
+
+            }
+        }
     }
-}
+

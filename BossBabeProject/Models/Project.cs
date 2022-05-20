@@ -20,7 +20,7 @@ namespace BossBabeProjectLibrary.Models {
 
 
         public override string ToString() {
-            return $"ID[{Id} | Actual hours {ActualHours}";
+            return $"ID[{Id} | Desription {Description} | Estimated Hours {EstimatedHours} | Actual hours {ActualHours} | Status {Status}";
         }
     }
     }

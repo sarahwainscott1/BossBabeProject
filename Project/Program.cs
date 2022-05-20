@@ -1,13 +1,15 @@
 ﻿using BossBabeProjectLibrary;
+using BossBabeProjectLibrary.Models;
 
-const string server = "localhost\\sqlexpress";
-const string database = "BossBabeProject";
+//Console.WriteLine($"{ProjectController.UpdateHoursWorked(2)}"); ;
 
-var projectctrlr = new ProjectController(server, database);
-projectctrlr.OpenConnection();
+//projectctrlr.CloseConnection();
 
-Console.WriteLine($"{ProjectController.UpdateHoursWorked(2)}"); ;
 
-projectctrlr.CloseConnection();
+ProjectController.GetAllProjects();
+Console.WriteLine($"___________________________________________");
+ResourceController.GetAllResources();
+
+
 //var workctrlr = new WorkController(server, database);
 //workctrlr.OpenConnection();
