@@ -15,7 +15,13 @@ namespace BossBabeProjectLibrary.Models {
         public int ActualHours { get; set; }
         [StringLength(30)]
         public string Status { get; set; } = "NEW";
-        public virtual List<Work>? Works { get; set; }
+        //public virtual List<Work>? Works { get; set; }
         public virtual Resource? Resources { get; set; }
+
+
+        public override string ToString() {
+            return $"ID[{Id} | Actual hours {ActualHours}";
+        }
     }
-}
+    }
+
